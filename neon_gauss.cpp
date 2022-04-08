@@ -55,7 +55,7 @@ void gauss(float** A,int n)
 				float32x4_t vakj=vld1q_f32(&A[k][j]);
 				float32x4_t vaij=vld1q_f32(&A[i][j]);
 				//vx ← vakj*vaik;
-				float32x4_t vx=vmulq_f32(vakj,vaij);
+				float32x4_t vx=vmulq_f32(vakj,vaik);
 				vaij=vsubq_f32(vaij,vx);
 				//store4FloatTo(&A[i,j],vaij);
 				vst1q_f32(&A[i][j],vaij);
