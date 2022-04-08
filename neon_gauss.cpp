@@ -1,4 +1,4 @@
-//普通高斯消去Neon非对齐（ARM平台）
+//普通高斯消去Neon（ARM平台）
 #include<iostream>
 #include<sys/time.h>
 #include<arm_neon.h>
@@ -61,7 +61,7 @@ void gauss(float** A,int n)
 				vst1q_f32(&A[i][j],vaij);
 			}
 			for(;j<n;j++)
-				A[k][j]=A[k][j]/A[k][k];
+				A[i][j]=A[i][j]-A[k][j]*A[i][j];
 			A[i][k]=0;
 		}
 	}	
