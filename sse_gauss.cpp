@@ -28,8 +28,6 @@ void m_reset(float m[500][500],int N)
                         for(int j=0;j<N;j++)
                                 m[i][j]+=m[k][j];
 }
-
-//普通高斯消元
 void gauss(float A[500][500],int n)
 {
         for(int k=0;k<n;k++)
