@@ -77,7 +77,6 @@ int main()
         int N;
 	cin>>N;
 	float** m;
-//        float m[500][500];
         for(int i=0;i<N;i++)
                 m=new float*[N];
         for(int i=0;i<N;i++)
@@ -85,19 +84,11 @@ int main()
         int n;//执行次数
         m_reset(m,N);//测试用例生成
         clock_t start,finish;
-//      QueryPerformanceFrequency((LARGE_INTEGER *)&freq);
-//      QueryPerformanceCounter((LARGE_INTEGER *)&head);
-//      int ret=gettimeofday(&val,NULL);
         start=clock();
         for(int i=0;i<n;i++)
            gauss(m,N);
         finish=clock();
         cout<<n<<":"<<(finish-start)/float(CLOCKS_PER_SEC)<<endl;
-//      QueryPerformanceCounter((LARGE_INTEGER *)&tail);
-//      cout<<(tail-head)*1000.0 / freq<<"ms"<<endl;
-//      ret=gettimeofday(&newval,NULL);
-//      cout<<"diff:sec---"<<newval.tv_sec-val.tv_sec<<" microsec---"<<newval.tv_usec
-//             -val.tv_usec<<endl;
         return 0;
 }
 
